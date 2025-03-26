@@ -2,5 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@layer base {
+  :root {
+    /* 🎨 Colores base */
+    --primary: #50a7c2; /* Azul más oscuro del gradiente */
+    --secondary: #7ecdcf; /* Color intermedio entre ambos */
+    --tertiary: #b7f8db; /* Verde más claro del gradiente */
+    --accent: #3d869b; /* Azul ligeramente más oscuro para contraste */
+    --neutral: #e0f2f1; /* Un tono claro para fondos neutros */
+    --neutral-bg: #2d2d2d; /* Fondo gris tenue */
+    --gradient-bg: #50a7c2;
+    --text-color: white;
+
+    --uno: rgb(238,174,202);
+    --dos: rgba(238,174,202,1);
+
+    /* 🌙 Tonos Dark */
+    --primary-dark: #2f6b86; /* Azul oscuro */
+    --secondary-dark: #5ea2a6; /* Verde azulado oscuro */
+    --tertiary-dark: #8fcbb8; /* Verde agua oscuro */
+    --accent-dark: #2a5c6d; /* Azul profundo */
+    --neutral-dark: #c4dad7; /* Gris neutro más oscuro */
+    --neutral-bg-dark: #2d2d2d; /* Fondo gris oscuro */
+
+    /* ☀️ Tonos Light */
+    --primary-light: #86c8db; /* Azul más claro */
+    --secondary-light: #b1e4e6; /* Verde azulado más claro */
+    --tertiary-light: #d6fff0; /* Verde agua más claro */
+    --accent-light: #5fa6bb; /* Azul un poco más brillante */
+    --neutral-light: #f8fdfc; /* Casi blanco para fondos */
+    --neutral-bg-light: #ffffff; /* Fondo completamente blanco */
+  }
+
+  body {
+    background-color: var(--neutral-bg);
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color) !important;
+  }
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Sobrescribir la fuente en todos los textos de Material */
+.mat-typography,
+.mat-button,
+.mat-toolbar,
+.mat-card-title,
+.mat-card-content,
+.mat-list-item,
+.mat-form-field,
+.mat-dialog-title,
+.mat-dialog-content {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.gradient-color {
+  background: var(--gradient-bg) !important;
+}
+
+.text-base {
+  color: var(--text-color) !important;
+}
+
+.mat-icon {
+  fill: currentColor !important;
+  color: var(--text-color) !important;
+}
