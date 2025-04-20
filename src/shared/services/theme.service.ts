@@ -1,29 +1,36 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
   private lightTheme = {
-    '--primary': '#469db7',  /* Azul ligeramente más oscuro */
-    '--secondary': '#6ec1c3', /* Azul más natural */
-    '--tertiary': '#a9f2d8',  /* Verde-menta más balanceado */
+    '--primary': '#F9EDEC',  /* Azul ligeramente más oscuro */
+    '--secondary': '#F1EBF3', /* Azul más natural */
+    '--tertiary': '#EBEDE2',  /* Verde-menta más balanceado */
     '--accent': '#337889',    /* Azul más profundo para destacar */
-    '--neutral': '#d9efec',   /* Gris claro con tinte verdeazulado */
-    '--neutral-bg': '#f5f7fa',/* Blanco con leve azul para menos fatiga visual */
+    '--neutral': '#fdf6f3',   /* Gris claro con tinte verdeazulado */
+    '--neutral-bg': '#FDF6F3',/* Blanco con leve azul para menos fatiga visual */
     '--gradient-bg': 'radial-gradient(circle, rgba(220,150,190,1) 0%, rgba(135,170,220,1) 100%)',
-    '--text-color': '#1a1a1a' /* Negro suave para buen contraste */
+    '--text-color': '#5E5F62', /* Negro suave para buen contraste */
+    '--text-primary': '#DF9490',
+    '--text-background-card': 'white'
 };
 private darkTheme = {
-  '--primary': '#2a5d72',  /* Azul petróleo más profundo */
-  '--secondary': '#4c8a8e', /* Verde azulado más neutro */
-  '--tertiary': '#79b9a8',  /* Verde agua menos saturado */
-  '--accent': '#224d5c',    /* Azul oscuro con mejor contraste */
-  '--neutral': '#a8c6c3',   /* Gris claro con tono verdoso */
-  '--neutral-bg': '#24282f',/* Gris casi negro con leve azul */
-  '--gradient-bg': 'radial-gradient(circle, rgba(70, 24, 90, 1) 0%, rgba(18, 35, 60, 1) 100%)',
-  '--text-color': '#ffffff' /* Blanco puro para alto contraste */
+  '--primary': '#2E1B2C',       // Profundo ciruela (versión oscura de #F9EDEC)
+  '--secondary': '#2B2233',     // Lila oscuro apagado (para fondo alternativo)
+  '--tertiary': '#3B3A32',      // Gris oliva oscuro (suave y no negro puro)
+  '--accent': '#88C9D2',        // Azul celeste tenue para acentos y enlaces
+  '--neutral': '#B8B2AE',       // Gris claro para íconos o texto secundario
+  '--neutral-bg': '#18181B',    // Fondo base general, casi negro
+  '--gradient-bg': 'radial-gradient(circle, rgba(60,20,50,1) 0%, rgba(20,30,40,1) 100%)',
+  '--text-color': '#E4E4E4',    // Blanco grisáceo para el texto principal
+  '--text-primary': '#DF9490',  // Conservado para coherencia (resalta bien)
+  '--text-background-card': '#1F1F23' // Para tarjetas, fondo intermedio
 };
+private themeSubject = new BehaviorSubject<'light' | 'dark'>(this.getCurrentTheme());
+theme$ = this.themeSubject.asObservable()
 
 
   constructor() {
@@ -40,6 +47,7 @@ private darkTheme = {
     });
 
     localStorage.setItem('theme', theme);
+    this.themeSubject.next(theme);
   }
 
   toggleTheme() {

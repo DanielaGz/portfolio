@@ -13,9 +13,11 @@
     --neutral-bg: #2d2d2d; /* Fondo gris tenue */
     --gradient-bg: #50a7c2;
     --text-color: white;
+    --text-primary: #df9490;
+    --text-background-card: #0f131e;
 
-    --uno: rgb(238,174,202);
-    --dos: rgba(238,174,202,1);
+    --uno: rgb(238, 174, 202);
+    --dos: rgba(238, 174, 202, 1);
 
     /* 🌙 Tonos Dark */
     --primary-dark: #2f6b86; /* Azul oscuro */
@@ -37,13 +39,27 @@
   body {
     background-color: var(--neutral-bg);
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     color: var(--text-color) !important;
   }
 }
 
-html, body {
-  font-family: 'Poppins', sans-serif;
+html,
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, fill 0.3s ease;
+}
+
+img {
+  transition: opacity 0.4s ease, filter 0.4s ease, transform 0.3s ease;
 }
 
 /* Sobrescribir la fuente en todos los textos de Material */
@@ -56,7 +72,7 @@ html, body {
 .mat-form-field,
 .mat-dialog-title,
 .mat-dialog-content {
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .gradient-color {
@@ -67,7 +83,65 @@ html, body {
   color: var(--text-color) !important;
 }
 
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
 .mat-icon {
   fill: currentColor !important;
+  color: var(--text-color) !important;
+}
+
+.background-default {
+  background-color: var(--text-background-card) !important;
+}
+
+.mat-mdc-card-outlined {
+  background-color: var(--text-background-card) !important;
+  border-color: var(--text-background-card) !important;
+  padding: 1rem !important;
+}
+
+.card-primary {
+  background-color: var(--primary) !important;
+}
+
+h1 {
+  font-size: 2.5em !important;
+  font-weight: bold !important;
+}
+
+h2 {
+  font-size: 1.5em !important;
+  font-weight: bold !important;
+}
+
+h3 {
+  font-size: 1.5em !important;
+  font-weight: bold !important;
+}
+
+.container {
+  max-width: 70rem;
+  margin: 3rem auto;
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  color: var(--text-color) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  color: var(--text-color) !important;
+}
+
+.btn-secondary {
+  background-color: var(--secondary) !important;
+  color: var(--text-color) !important;
+}
+
+.btn-tertiary {
+  background-color: var(--tertiary) !important;
   color: var(--text-color) !important;
 }
