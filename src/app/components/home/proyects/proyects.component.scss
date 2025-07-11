@@ -1,0 +1,27 @@
+.zoom-hover {
+    transition: transform 0.3s ease; /* Animación suave */
+  }
+  
+  .zoom-hover:hover {
+    transform: scale(1.1); /* Escala el div al 110% */
+    z-index: 10; /* Asegura que el div esté sobre otros elementos */
+  }
+  
+  .description {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.494);
+    color: white;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    margin-right: 1rem;
+    padding: 2px;
+    height: 200px;
+  }
+  
+  .zoom-hover:hover .description {
+    opacity: 1; /* Hacerla visible */
+    visibility: visible;
+    display: block;
+  }
