@@ -1,39 +1,62 @@
+@use './styles/themes.scss';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* 🎨 Colores base */
-    --primary: #50a7c2; /* Azul más oscuro del gradiente */
-    --secondary: #7ecdcf; /* Color intermedio entre ambos */
-    --tertiary: #b7f8db; /* Verde más claro del gradiente */
-    --accent: #3d869b; /* Azul ligeramente más oscuro para contraste */
-    --neutral: #e0f2f1; /* Un tono claro para fondos neutros */
-    --neutral-bg: #2d2d2d; /* Fondo gris tenue */
-    --gradient-bg: #50a7c2;
-    --text-color: white;
-    --text-primary: #df9490;
-    --text-background-card: #0f131e;
-
-    --uno: rgb(238, 174, 202);
-    --dos: rgba(238, 174, 202, 1);
-
-    /* 🌙 Tonos Dark */
-    --primary-dark: #2f6b86; /* Azul oscuro */
-    --secondary-dark: #5ea2a6; /* Verde azulado oscuro */
-    --tertiary-dark: #8fcbb8; /* Verde agua oscuro */
-    --accent-dark: #2a5c6d; /* Azul profundo */
-    --neutral-dark: #c4dad7; /* Gris neutro más oscuro */
-    --neutral-bg-dark: #2d2d2d; /* Fondo gris oscuro */
-
-    /* ☀️ Tonos Light */
-    --primary-light: #86c8db; /* Azul más claro */
-    --secondary-light: #b1e4e6; /* Verde azulado más claro */
-    --tertiary-light: #d6fff0; /* Verde agua más claro */
-    --accent-light: #5fa6bb; /* Azul un poco más brillante */
-    --neutral-light: #f8fdfc; /* Casi blanco para fondos */
-    --neutral-bg-light: #ffffff; /* Fondo completamente blanco */
+    /* 🧱 Material Design Variables */
+    --mat-sys-background: #fff8f8;
+    --mat-sys-error: #ba1a1a;
+    --mat-sys-error-container: #ffdad6;
+    --mat-sys-inverse-on-surface: #faeeef;
+    --mat-sys-inverse-primary: #ffb1c5;
+    --mat-sys-inverse-surface: #352f30;
+    --mat-sys-on-background: #201a1b;
+    --mat-sys-on-error: #ffffff;
+    --mat-sys-on-error-container: #410002;
+    --mat-sys-on-primary: #ffffff;
+    --mat-sys-on-primary-container: #3f001b;
+    --mat-sys-on-primary-fixed: #3f001b;
+    --mat-sys-on-primary-fixed-variant: #8f0045;
+    --mat-sys-on-secondary: #ffffff;
+    --mat-sys-on-secondary-container: #2b151b;
+    --mat-sys-on-secondary-fixed: #2b151b;
+    --mat-sys-on-secondary-fixed-variant: #5b3f46;
+    --mat-sys-on-surface: var(--text-color);
+    --mat-sys-on-surface-variant: #514346;
+    --mat-sys-on-tertiary: #ffffff;
+    --mat-sys-on-tertiary-container: #410000;
+    --mat-sys-on-tertiary-fixed: #410000;
+    --mat-sys-on-tertiary-fixed-variant: #930100;
+    --mat-sys-outline: #847376;
+    --mat-sys-outline-variant: #d6c2c5;
+    --mat-sys-primary: var(--text-background-card);
+    --mat-sys-primary-container: #ffd9e1;
+    --mat-sys-primary-fixed: #ffd9e1;
+    --mat-sys-primary-fixed-dim: #ffb1c5;
+    --mat-sys-scrim: #000000;
+    --mat-sys-secondary: #74565d;
+    --mat-sys-secondary-container: #ffd9e1;
+    --mat-sys-secondary-fixed: #ffd9e1;
+    --mat-sys-secondary-fixed-dim: #e3bdc5;
+    --mat-sys-shadow: #000000;
+    --mat-sys-surface: #fff8f8;
+    --mat-sys-surface-bright: #fff8f8;
+    --mat-sys-surface-container: #f7ebec;
+    --mat-sys-surface-container-high: #f1e5e6;
+    --mat-sys-surface-container-highest: #ece0e1;
+    --mat-sys-surface-container-low: var(--text-background-card);
+    --mat-sys-surface-container-lowest: #ffffff;
+    --mat-sys-surface-dim: #e3d7d8;
+    --mat-sys-surface-tint: #ba005c;
+    --mat-sys-surface-variant: var(--neutral-bg);
+    --mat-sys-tertiary: #c00100;
+    --mat-sys-tertiary-container: #ffdad4;
+    --mat-sys-tertiary-fixed: #ffdad4;
+    --mat-sys-tertiary-fixed-dim: #ffb4a8;
+    --mat-sys-neutral-variant20: #3a2d30;
   }
 
   body {
@@ -41,109 +64,113 @@
     margin: 0;
     font-family: "Poppins", sans-serif;
     color: var(--text-color) !important;
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--secondary) 0px,
+      var(--secondary) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      var(--secondary) 0px,
+      var(--secondary) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, fill 0.3s ease;
+  }
+
+  html,
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+
+  :root {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  img {
+    transition: opacity 0.4s ease, filter 0.4s ease, transform 0.3s ease;
+  }
+
+  /* Tipografías Angular Material */
+  .mat-typography,
+  .mat-button,
+  .mat-toolbar,
+  .mat-card-title,
+  .mat-card-content,
+  .mat-list-item,
+  .mat-form-field,
+  .mat-dialog-title,
+  .mat-dialog-content {
+    font-family: "Montserrat", sans-serif !important;
   }
 }
 
-html,
-body {
-  font-family: "Poppins", sans-serif;
-}
+@layer utilities {
+  .gradient-color {
+    background: var(--gradient-bg) !important;
+  }
 
-:root {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+  .text-base {
+    color: var(--text-color) !important;
+  }
 
-body {
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease, fill 0.3s ease;
-}
+  .text-primary {
+    color: var(--text-primary) !important;
+  }
 
-img {
-  transition: opacity 0.4s ease, filter 0.4s ease, transform 0.3s ease;
-}
+  .mat-icon {
+    fill: currentColor !important;
+    color: var(--text-color) !important;
+  }
 
-/* Sobrescribir la fuente en todos los textos de Material */
-.mat-typography,
-.mat-button,
-.mat-toolbar,
-.mat-card-title,
-.mat-card-content,
-.mat-list-item,
-.mat-form-field,
-.mat-dialog-title,
-.mat-dialog-content {
-  font-family: "Montserrat", sans-serif !important;
-}
+  .background-default {
+    background-color: var(--text-background-card) !important;
+  }
 
-.gradient-color {
-  background: var(--gradient-bg) !important;
-}
+  .mat-mdc-card-outlined {
+    background-color: var(--text-background-card) !important;
+    border-color: var(--text-background-card) !important;
+    padding: 1rem !important;
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  }
 
-.text-base {
-  color: var(--text-color) !important;
-}
+  .card-primary {
+    background-color: var(--primary) !important;
+  }
 
-.text-primary {
-  color: var(--text-primary) !important;
-}
+  .btn-primary {
+    background-color: var(--primary) !important;
+    color: var(--text-color) !important;
+  }
 
-.mat-icon {
-  fill: currentColor !important;
-  color: var(--text-color) !important;
-}
+  .btn-secondary {
+    background-color: var(--secondary) !important;
+    color: var(--text-color) !important;
+  }
 
-.background-default {
-  background-color: var(--text-background-card) !important;
-}
+  .btn-tertiary {
+    background-color: var(--tertiary) !important;
+    color: var(--text-color) !important;
+  }
 
-.mat-mdc-card-outlined {
-  background-color: var(--text-background-card) !important;
-  border-color: var(--text-background-card) !important;
-  padding: 1rem !important;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-            0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
-}
+  h1 {
+    font-size: 2.5em !important;
+    font-weight: bold !important;
+  }
 
-.card-primary {
-  background-color: var(--primary) !important;
-}
+  h2,
+  h3 {
+    font-size: 1.5em !important;
+    font-weight: bold !important;
+  }
 
-h1 {
-  font-size: 2.5em !important;
-  font-weight: bold !important;
-}
-
-h2 {
-  font-size: 1.5em !important;
-  font-weight: bold !important;
-}
-
-h3 {
-  font-size: 1.5em !important;
-  font-weight: bold !important;
-}
-
-.container {
-  max-width: 70rem;
-  margin: 3rem auto;
-}
-
-.btn-primary {
-  background-color: var(--primary) !important;
-  color: var(--text-color) !important;
-}
-
-.btn-primary {
-  background-color: var(--primary) !important;
-  color: var(--text-color) !important;
-}
-
-.btn-secondary {
-  background-color: var(--secondary) !important;
-  color: var(--text-color) !important;
-}
-
-.btn-tertiary {
-  background-color: var(--tertiary) !important;
-  color: var(--text-color) !important;
+  .container {
+    max-width: 70rem;
+    margin: 3rem auto;
+  }
 }

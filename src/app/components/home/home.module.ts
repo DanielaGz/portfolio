@@ -8,6 +8,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { InitComponent } from './init/init.component';
 import { ProyectsComponent } from './proyects/proyects.component';
 import { ContactComponent } from './contact/contact.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -29,7 +32,10 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
   ]
 })
 export class HomeModule { }

@@ -1,0 +1,11 @@
+/* Aplica a todos los mat‑form‑field dentro del formulario */
+form mat-form-field {
+  display: block;       /* Ocupa todo el ancho y fuerza salto de línea */
+  width: 100%;          /* Los hace crecer horizontalmente */
+  margin-bottom: 1.25rem; /* Espacio vertical entre campos (ajusta a gusto) */
+}
+
+/* Opcional: quita el margen al último campo para que no quede hueco extra */
+form mat-form-field:last-child {
+  margin-bottom: 0;
+}
