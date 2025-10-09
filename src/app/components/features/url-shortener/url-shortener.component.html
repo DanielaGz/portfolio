@@ -1,0 +1,72 @@
+<div class="flex justify-center items-center">
+  <mat-card appearance="outlined" class="p-6 w-full max-w-md shadow-lg rounded-2xl">
+    <h1 class="text-center mb-4 text-2xl font-semibold text-primary">Acortador de URL's</h1>
+
+    <form [formGroup]="urlForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="w-full">
+        <mat-label class="text-primary">Agrega la URL a acortar</mat-label>
+        <input matInput formControlName="url" placeholder="https://ejemplo.com/">
+        <mat-error *ngIf="urlForm.get('url')?.hasError('required')">
+          La URL es obligatoria
+        </mat-error>
+        <mat-error *ngIf="urlForm.get('url')?.hasError('pattern')">
+          Ingresa una URL válida
+        </mat-error>
+      </mat-form-field>
+
+      <div class="flex flex-col items-center mt-6 space-y-2">
+        <button mat-flat-button type="submit" class="px-6 py-2 btn-tertiary">
+          ¡Acortar ahora!
+        </button>
+        <p class="text-sm text-gray-500">
+          Convierte tus enlaces largos en versiones simples y compartibles
+        </p>
+      </div>
+    </form>
+
+    <div *ngIf="url_shorter"
+      class="mt-6 p-4 border border-primary rounded-xl bg-primary/10 flex flex-col items-center space-y-3">
+      <h3 class="text-lg font-semibold text-primary">¡Tu enlace acortado está listo!</h3>
+
+      <div class="flex items-center space-x-2 w-full justify-center">
+        <a [href]="url_shorter" target="_blank" rel="noopener noreferrer"
+          class="text-blue-600 hover:underline truncate max-w-[70%]">
+          {{ url_shorter }}
+        </a>
+
+        <button mat-icon-button aria-label="Copiar enlace" (click)="copyToClipboard(url_shorter)">
+          <mat-icon>content_copy</mat-icon>
+        </button>
+      </div>
+
+      <mat-hint *ngIf="copied" class="text-green-600 text-sm">
+        ¡Enlace copiado al portapapeles!
+      </mat-hint>
+    </div>
+  </mat-card>
+
+</div>
+
+<div class="flex justify-center items-center mt-4 space-x-4">
+  <a
+    href="https://github.com/tu_usuario/url-shortener-frontend"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button mat-stroked-button color="primary" class="flex items-center space-x-2" class="btn-secondary">
+      <mat-icon>code</mat-icon>
+      <span>Frontend</span>
+    </button>
+  </a>
+
+  <a
+    href="https://github.com/tu_usuario/url-shortener-backend"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button mat-stroked-button color="accent" class="flex items-center space-x-2" class="btn-secondary">
+      <mat-icon>storage</mat-icon>
+      <span>Backend</span>
+    </button>
+  </a>
+</div>
