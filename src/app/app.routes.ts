@@ -7,4 +7,9 @@ export const routes: Routes = [
     loadChildren: () =>
       import('../app/components/home/home.module').then((m) => m.HomeModule),
   },
+  {
+    path: 'features',
+    loadChildren: () =>
+      import('../app/components/features/features.module').then((m) => m.FeaturesModule),
+  },
 ];

@@ -1,11 +1,9 @@
-<div class="relative">
-    <navbar></navbar>
+<div class="relative min-h-screen pb-20">
+  <navbar></navbar>
 
-<ng-container class="container">
-    <div class="p-4 container mx-auto px-4">
-        <router-outlet></router-outlet>
-    </div>
-</ng-container>
+  <main class="p-4 container mx-auto px-4">
+    <router-outlet></router-outlet>
+  </main>
 
-<app-footer></app-footer>
+  <app-footer class="fixed bottom-0 left-0 w-full"></app-footer>
 </div>
