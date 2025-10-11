@@ -12,4 +12,5 @@ export const routes: Routes = [
     loadChildren: () =>
       import('../app/components/features/features.module').then((m) => m.FeaturesModule),
   },
+  { path: '**', redirectTo: '' }
 ];

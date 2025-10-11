@@ -1,58 +1,33 @@
 <h1>Proyectos</h1>
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    @for (project of projects; track project.name) {
     <mat-card class="zoom-hover p-4" appearance="outlined">
         <div class="grid grid-rows-1 gap-4">
-            <div style="height: 200px; background-color: white;"></div>
+            <div class="h-[200px] overflow-hidden rounded-lg">
+                <img [src]="project.imageUrl" alt="{{ project.name }}"
+                    class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+            </div>
             <div class="description">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                {{ project.description }}
             </div>
             <h2>
-                Proyecto titulo
+                {{ project.name }}
             </h2>
-            <span>tecnologias</span>
+            <span>Tecnologías</span>
             <div class="flex gap-4 pt-4">
-                <button mat-flat-button class="btn-primary">Github</button>
-                <button mat-flat-button class="btn-primary">Demo</button>
+                <a [href]="project.githubUrl" target="_blank"
+                    rel="noopener noreferrer">
+                    <button mat-stroked-button class="flex items-center space-x-2"
+                        class="btn-secondary">
+                        <!-- <mat-icon>code</mat-icon> -->
+                        <span>Github</span>
+                    </button>
+                </a>
+                <!-- <button mat-flat-button class="btn-primary">Github</button> -->
+                <button mat-stroked-button class="btn-primary" [routerLink]="project.demoUrl">Demo</button>
             </div>
         </div>
     </mat-card>
-    <mat-card class="zoom-hover p-4" appearance="outlined">
-        <div class="grid grid-rows-1 gap-4">
-            <div style="height: 200px; background-color: white;">
+    }
 
-            </div>
-            <div class="description">
-                asd asdsa dasd asd as dsa das d sadsa dasd
-            </div>
-            <h2>
-                Proyecto titulo
-            </h2>
-            <span>tecnologias</span>
-            
-            <div class="flex gap-4 pt-4">
-                <button mat-flat-button class="btn-secondary">Github</button>
-                <button mat-flat-button class="btn-secondary">Demo</button>
-            </div>
-        </div>
-    </mat-card>
-    <mat-card class="zoom-hover p-4" appearance="outlined">
-        <div class="grid grid-rows-1 gap-4">
-            <div style="height: 200px; background-color: white;">
-
-            </div>
-            <div class="description">
-                asd asdsa dasd asd as dsa das d sadsa dasd
-                
-            </div>
-            <h2>
-                Proyecto titulo
-            </h2>
-            <span>tecnologias</span>
-            
-            <div class="flex gap-4 pt-4">
-                <button mat-flat-button class="btn-tertiary">Github</button>
-            <button mat-flat-button class="btn-tertiary">Demo</button>
-            </div>
-        </div>
-    </mat-card>
 </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { projects } from './service/projects';
 
 @Component({
   selector: 'app-proyects',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class ProyectsComponent {
-
+  public projects = projects;
 }

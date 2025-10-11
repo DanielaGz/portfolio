@@ -32,7 +32,8 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule
   ],
   providers:[
     ShortenerService

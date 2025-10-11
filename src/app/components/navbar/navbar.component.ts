@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { MaterialModules } from '../../app.imports';
 import { ThemeService } from '../../../shared/services/theme.service';
 
 @Component({
   selector: 'navbar',
-  imports: [...MaterialModules],
+  imports: [...MaterialModules, RouterModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
