@@ -8,9 +8,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { InitComponent } from './init/init.component';
 import { ProyectsComponent } from './proyects/proyects.component';
 import { ContactComponent } from './contact/contact.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
 
 
 const routes: Routes = [

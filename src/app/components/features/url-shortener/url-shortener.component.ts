@@ -16,7 +16,8 @@ export class UrlShortenerComponent {
   constructor(
     private fb: FormBuilder,
     private shortenerService: ShortenerService
-  ) { }
+  ) { 
+  }
 
   ngOnInit(): void {
     this.urlForm = this.fb.group({
@@ -27,12 +28,12 @@ export class UrlShortenerComponent {
 
 
   onSubmit(): void {
+    if (this.urlForm.invalid){
+      return;
+    }
     const originalUrl = this.urlForm.value.url;
-    console.log(originalUrl);
-
     this.shortenerService.shortenUrl(originalUrl).subscribe({
       next: (response) => {
-        console.log('URL corta generada:', response.short_url);
         this.url_shorter = response.short_url;
       },
       error: (err) => {

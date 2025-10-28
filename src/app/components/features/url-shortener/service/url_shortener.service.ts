@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ShortenerService {
-  private baseUrl = 'http://127.0.0.1:8000'; // cambia por tu endpoint real
+  private baseUrl = 'https://url-shortener-111500532067.us-central1.run.app';
 
   constructor(private http: HttpClient) {}
 

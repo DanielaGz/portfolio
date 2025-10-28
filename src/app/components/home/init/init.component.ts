@@ -11,7 +11,6 @@ export class InitComponent {
   currentTheme = 'light';
   constructor(private themeService: ThemeService) {
     this.themeService.theme$.subscribe(theme => {
-      console.log('Nuevo tema activo:', theme);
       this.currentTheme = this.themeService.getCurrentTheme();
     });
     

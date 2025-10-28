@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
+import { SelectedProjectService } from '../home/proyects/service/selected-project.service';
 
 @Component({
   selector: 'app-features',
-  imports: [],
   templateUrl: './features.component.html',
-  styleUrl: './features.component.scss'
+  styleUrls: ['./features.component.scss'],
+  standalone: false
 })
 export class FeaturesComponent {
+
+  selectedProject: any = null;
+
+  constructor(
+      private selectedProjectService: SelectedProjectService
+    ) { 
+      this.selectedProject = this.selectedProjectService.getSelectedProject();
+    }
 
 }

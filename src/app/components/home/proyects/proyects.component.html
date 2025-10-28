@@ -23,8 +23,7 @@
                         <span>Github</span>
                     </button>
                 </a>
-                <!-- <button mat-flat-button class="btn-primary">Github</button> -->
-                <button mat-stroked-button class="btn-primary" [routerLink]="project.demoUrl">Demo</button>
+                <button mat-stroked-button class="btn-primary" (click)="selectProject(project)">Demo</button>
             </div>
         </div>
     </mat-card>
