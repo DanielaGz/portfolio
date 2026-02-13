@@ -1,23 +1,16 @@
-<mat-toolbar class="background-default text-base shadow-md sticky top-0 z-10">
-  <!-- <button mat-icon-button>
-    <mat-icon>menu</mat-icon>
-  </button> -->
+<mat-toolbar class="navbar-header text-base sticky top-0 z-10 px-6 py-2">
   <span
-    class="cursor-pointer hover:opacity-80 transition-opacity"
+    class="text-primary cursor-pointer hover:opacity-80 transition-opacity font-semibold text-lg tracking-wide"
     routerLink="/"
   >
     Daniela Guzmán
   </span>
   <span class="example-spacer"></span>
-  <!-- TODO: Agregar traducción -->
-  <!-- <button mat-icon-button>
-    <mat-icon>favorite</mat-icon>
-  </button> -->
-  <button mat-icon-button (click)="toggleTheme()">
+  <button mat-icon-button (click)="toggleTheme()" class="hover:bg-white/10 transition-all rounded-none">
     @if (currentTheme === 'light') {
-      <mat-icon>light_mode</mat-icon>
-    } @else {
       <mat-icon>dark_mode</mat-icon>
+    } @else {
+      <mat-icon>light_mode</mat-icon>
     }
   </button>
 </mat-toolbar>

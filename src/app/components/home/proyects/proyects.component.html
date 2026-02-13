@@ -1,32 +1,35 @@
-<h1>Proyectos</h1>
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="">
+  <h1 class="text-4xl font-bold mb-10">Proyectos</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     @for (project of projects; track project.name) {
-    <mat-card class="zoom-hover p-4" appearance="outlined">
-        <div class="grid grid-rows-1 gap-4">
-            <div class="h-[200px] overflow-hidden rounded-lg">
-                <img [src]="project.imageUrl" alt="{{ project.name }}"
-                    class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-            </div>
-            <div class="description">
-                {{ project.description }}
-            </div>
-            <h2>
-                {{ project.name }}
-            </h2>
-            <span>Tecnologías</span>
-            <div class="flex gap-4 pt-4">
-                <a [href]="project.githubUrl" target="_blank"
-                    rel="noopener noreferrer">
-                    <button mat-stroked-button class="flex items-center space-x-2"
-                        class="btn-secondary">
-                        <!-- <mat-icon>code</mat-icon> -->
-                        <span>Github</span>
-                    </button>
-                </a>
-                <button mat-stroked-button class="btn-primary" (click)="selectProject(project)">Demo</button>
-            </div>
+    <div class="glass-card overflow-hidden group hover:shadow-lg-soft transition-all duration-300">
+      <div class="h-[220px] overflow-hidden relative">
+        <img [src]="project.imageUrl" alt="{{ project.name }}"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </div>
+      <div class="p-6 space-y-4">
+        <div>
+          <h2 class="text-xl font-bold mb-2">
+            {{ project.name }}
+          </h2>
+          <p class="text-sm text-opacity-75 leading-relaxed">
+            {{ project.description }}
+          </p>
         </div>
-    </mat-card>
+        <div class="flex gap-3 pt-2">
+          <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-0">
+            <button mat-stroked-button class="!w-full !h-11 !min-h-[44px] btn-secondary rounded-lg transition-all hover:shadow-soft !flex !items-center !justify-center !px-4">
+              <mat-icon class="!mr-1 !text-[20px] !w-5 !h-5">code</mat-icon>
+              <span>Github</span>
+            </button>
+          </a>
+          <button mat-stroked-button class="flex-1 !w-full !h-11 !min-h-[44px] btn-primary rounded-lg transition-all hover:shadow-soft !flex !items-center !justify-center !px-4" (click)="selectProject(project)">
+            <span>Demo</span>
+          </button>
+        </div>
+      </div>
+    </div>
     }
-
+  </div>
 </div>

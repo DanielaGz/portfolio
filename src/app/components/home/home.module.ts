@@ -38,7 +38,8 @@ const routes: Routes = [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatIconModule
   ]
 })
 export class HomeModule { }

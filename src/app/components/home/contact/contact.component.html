@@ -1,18 +1,22 @@
-<h1>Contacto</h1>
-<mat-card appearance="outlined">
-    <form action="">
-        <mat-form-field>
-        <mat-label class="text-primary">Nombre</mat-label>
-        <input matInput>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label class="text-primary">Correo</mat-label>
-        <input matInput>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label class="text-primary">Mensaje</mat-label>
-        <textarea matInput></textarea>
-    </mat-form-field>
+<div class="">
+  <h1 class="text-4xl font-bold mb-10">Contacto</h1>
+  <div class="glass-card p-8 max-w-2xl mx-auto">
+    <form class="space-y-6">
+      <mat-form-field class="w-full">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Tu nombre">
+      </mat-form-field>
+      <mat-form-field class="w-full">
+        <mat-label>Correo</mat-label>
+        <input matInput type="email" placeholder="tu@email.com">
+      </mat-form-field>
+      <mat-form-field class="w-full">
+        <mat-label>Mensaje</mat-label>
+        <textarea matInput rows="6" placeholder="Tu mensaje aquí..."></textarea>
+      </mat-form-field>
+      <button mat-raised-button class="w-full btn-primary py-3 rounded-lg font-semibold shadow-soft hover:shadow-lg-soft transition-all">
+        Enviar Mensaje
+      </button>
     </form>
-
-</mat-card>
+  </div>
+</div>

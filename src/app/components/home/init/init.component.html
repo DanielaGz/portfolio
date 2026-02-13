@@ -1,24 +1,23 @@
-<mat-card appearance="outlined">
-    <!-- <mat-card-header>
-      <mat-card-title>Sobre mi...</mat-card-title>
-    </mat-card-header> -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div class="p-4">
-        <img [src]="'assets/images/logo-'+currentTheme+'.png'" alt="" style="max-height: 300px;">
+<div class="glass-card p-8 sm:p-12 shadow-lg-soft">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+      <div class="flex justify-center">
+        <img [src]="'assets/images/logo-final.png'" alt="" class="max-h-500 w-auto drop-shadow-lg"  style="height: 400px;"/>
       </div>
-      <div class="p-4">
-        <h1>
-            Hola, soy <span class="text-primary">Desarrolladora</span> <br> Full Stack
-        </h1>
-        <p>
-            Apasionada de crear aplicaciones web y backend eficientes, con un enfoqueen la calidad y la colaboración
-        </p>
-        <div class="py-4">
-           <!--  <button mat-flat-button class="btn-primary">Ver mis proyectos</button>
-            <button mat-flat-button class="btn-secondary">Ver mis proyectos</button> -->
-            <button mat-stroked-button class="btn-tertiary">Ver mis proyectos</button>
+      <div class="space-y-6">
+        <div>
+          <h1 class="text-4xl sm:text-5xl font-bold leading-tight mb-2">
+            Hola, soy <p><span class="text-primary">Desarrolladora</span></p> Full Stack
+          </h1>
+          <p class="text-lg text-opacity-80 leading-relaxed">
+          Especializada en arquitectura web moderna y desarrollo end-to-end. 
+          Creo aplicaciones escalables y eficientes combinando las mejores 
+          prácticas de frontend y backend.
+          </p>
         </div>
+        <button mat-raised-button class="btn-primary px-10 py-4 rounded-xl font-bold text-base shadow-lg-soft hover:shadow-xl transition-all duration-300 hover:scale-105">
+          Ver mis proyectos
+        </button>
       </div>
     </div>
-  </mat-card>
+</div>
   

@@ -1,10 +1,10 @@
-<div class="flex justify-center items-center">
-  <mat-card appearance="outlined" class="p-6 w-full max-w-md shadow-lg rounded-2xl">
-    <h1 class="text-center mb-4 text-2xl font-semibold text-primary">Acortador de URL's</h1>
+<div class="flex justify-center items-center py-8">
+  <div class="glass-card p-8 w-full max-w-md shadow-lg-soft">
+    <h1 class="text-center mb-6 text-3xl font-bold">Acortador de URL's</h1>
 
     <form [formGroup]="urlForm" (ngSubmit)="onSubmit()">
-      <mat-form-field class="w-full">
-        <mat-label class="text-primary">Agrega la URL a acortar</mat-label>
+      <mat-form-field class="w-full mb-6">
+        <mat-label>Agrega la URL a acortar</mat-label>
         <input matInput formControlName="url" placeholder="https://ejemplo.com/">
         <mat-error *ngIf="urlForm.get('url')?.hasError('required')">
           La URL es obligatoria
@@ -14,35 +14,35 @@
         </mat-error>
       </mat-form-field>
 
-      <div class="flex flex-col items-center mt-6 space-y-2">
-        <button mat-flat-button type="submit" class="px-6 py-2 btn-tertiary">
-          ¡Acortar ahora!
+      <div class="flex flex-col items-center space-y-3">
+        <button mat-flat-button type="submit" class="btn-primary w-full py-4 px-8 rounded-xl">
+          ¡Acortar ahora! 
         </button>
-        <p class="text-sm text-gray-500">
+        <p class="text-sm opacity-70">
           Convierte tus enlaces largos en versiones simples y compartibles
         </p>
       </div>
     </form>
 
     <div *ngIf="url_shorter"
-      class="mt-6 p-4 border border-primary rounded-xl bg-primary/10 flex flex-col items-center space-y-3">
-      <h3 class="text-lg font-semibold text-primary">¡Tu enlace acortado está listo!</h3>
+      class="mt-8 p-6 glass-rounded-lg flex flex-col items-center space-y-4 border border-white/20">
+      <h3 class="text-lg text-center font-semibold">¡Tu enlace acortado está listo!</h3>
 
-      <div class="flex items-center space-x-2 w-full justify-center">
+      <div class="flex items-center space-x-2 w-full justify-center gap-2">
         <a [href]="url_shorter" target="_blank" rel="noopener noreferrer"
-          class="text-blue-600 hover:underline truncate max-w-[70%]">
+          class="text-primary hover:opacity-80 transition-opacity truncate max-w-[70%] font-medium">
           {{ url_shorter }}
         </a>
 
-        <button mat-icon-button aria-label="Copiar enlace" (click)="copyToClipboard(url_shorter)">
+        <button mat-icon-button aria-label="Copiar enlace" (click)="copyToClipboard(url_shorter)" class="hover:scale-110 transition-transform">
           <mat-icon>content_copy</mat-icon>
         </button>
       </div>
 
-      <mat-hint *ngIf="copied" class="text-green-600 text-sm">
-        ¡Enlace copiado al portapapeles!
+      <mat-hint *ngIf="copied" class="text-green-500 text-sm font-medium">
+        ✓ ¡Enlace copiado al portapapeles!
       </mat-hint>
     </div>
-  </mat-card>
+  </div>
 
 </div>

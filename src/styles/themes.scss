@@ -5,7 +5,13 @@ html[data-theme='light'] {
   --tertiary: #ebede2;
   --accent: #337889;
   --neutral: #fdf6f3;
-  --neutral-bg: #fdf6f3;
+  --neutral-bg: 
+    radial-gradient(ellipse 650px 500px at 8% 15%, rgba(255, 180, 200, 0.9) 0%, transparent 40%),
+    radial-gradient(ellipse 600px 550px at 88% 20%, rgba(180, 210, 255, 0.85) 0%, transparent 40%),
+    radial-gradient(ellipse 550px 450px at 20% 70%, rgba(200, 240, 180, 0.8) 0%, transparent 40%),
+    radial-gradient(ellipse 500px 480px at 75% 75%, rgba(220, 200, 255, 0.75) 0%, transparent 40%),
+    radial-gradient(ellipse 550px 400px at 50% 40%, rgba(255, 220, 180, 0.7) 0%, transparent 35%),
+    linear-gradient(135deg, #f5e8e2 0%, #e8e5f0 50%, #e5ebe5 100%);
   --gradient-bg: radial-gradient(circle,
       rgba(220, 150, 190, 1) 0%,
       rgba(135, 170, 220, 1) 100%);
@@ -21,7 +27,13 @@ html[data-theme='dark'] {
   --tertiary: #3b3a32;
   --accent: #88c9d2;
   --neutral: #b8b2ae;
-  --neutral-bg: #18181b;
+  --neutral-bg: 
+    radial-gradient(ellipse 700px 550px at 8% 18%, rgba(140, 60, 100, 0.7) 0%, transparent 42%),
+    radial-gradient(ellipse 600px 600px at 88% 22%, rgba(50, 120, 150, 0.65) 0%, transparent 42%),
+    radial-gradient(ellipse 550px 400px at 30% 72%, rgba(100, 80, 140, 0.6) 0%, transparent 42%),
+    radial-gradient(ellipse 520px 480px at 72% 65%, rgba(80, 100, 130, 0.55) 0%, transparent 42%),
+    radial-gradient(ellipse 600px 500px at 50% 30%, rgba(150, 70, 110, 0.5) 0%, transparent 40%),
+    linear-gradient(135deg, #1a1619 0%, #1f1b25 50%, #191f1d 100%);
   --gradient-bg: radial-gradient(circle,
       rgba(60, 20, 50, 1) 0%,
       rgba(20, 30, 40, 1) 100%);
