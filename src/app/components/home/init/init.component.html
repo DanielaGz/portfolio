@@ -1,20 +1,20 @@
 <div class="glass-card p-8 sm:p-12 shadow-lg-soft">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
       <div class="flex justify-center">
-        <img [src]="'assets/images/logo-final.png'" alt="" class="max-h-500 w-auto drop-shadow-lg"  style="height: 400px;"/>
+        <img [src]="'assets/images/logo-final.png'" alt="" class="max-h-500 w-auto drop-shadow-lg"  style="max-height: 400px;"/>
       </div>
       <div class="space-y-6">
         <div>
-          <h1 class="text-4xl sm:text-5xl font-bold leading-tight mb-2">
-            Hola, soy <p><span class="text-primary">Desarrolladora</span></p> Full Stack
-          </h1>
+          <h2 class="text-2xl sm:text-5xl font-bold leading-tight mb-2">
+            Hola, soy <br><span class="text-primary">Desarrolladora</span><br> Full Stack
+          </h2>
           <p class="text-lg text-opacity-80 leading-relaxed">
           Especializada en arquitectura web moderna y desarrollo end-to-end. 
           Creo aplicaciones escalables y eficientes combinando las mejores 
           prácticas de frontend y backend.
           </p>
         </div>
-        <button mat-raised-button class="btn-primary px-10 py-4 rounded-xl font-bold text-base shadow-lg-soft hover:shadow-xl transition-all duration-300 hover:scale-105">
+        <button mat-raised-button (click)="goToProjects()" class="btn-primary px-10 py-4 rounded-xl font-bold text-base shadow-lg-soft hover:shadow-xl transition-all duration-300 hover:scale-105">
           Ver mis proyectos
         </button>
       </div>

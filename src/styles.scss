@@ -416,7 +416,12 @@
     letter-spacing: -0.02em;
   }
 
-  h2,
+  h2 {
+    font-size: 2em !important;
+    font-weight: bold !important;
+    letter-spacing: -0.01em;
+  }
+
   h3 {
     font-size: 1.5em !important;
     font-weight: bold !important;
