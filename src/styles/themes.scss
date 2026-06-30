@@ -3,6 +3,20 @@ html[data-theme='light'] {
   --primary: #f9edec;
   --secondary: #f1ebf3;
   --tertiary: #ebede2;
+  /* Category colors (light theme) - mapped from btn-primary/secondary/tertiary */
+  --cat-advanced: #df9490;
+  --cat-advanced-2: #b8a8c8;
+  --cat-intermediate: #a888c8;
+  --cat-intermediate-2: #88c9d2;
+  --cat-learning: #a8c8c0;
+  --cat-learning-2: #d8a8b8;
+  --cat-basic: #9ca3af;
+  --cat-basic-2: #7f8a94;
+  /* badge text colors - white for contrast on colored backgrounds */
+  --cat-advanced-on: #ffffff;
+  --cat-intermediate-on: #ffffff;
+  --cat-learning-on: #ffffff;
+  --cat-basic-on: #ffffff;
   --accent: #337889;
   --neutral: #fdf6f3;
   --neutral-bg: 
@@ -25,6 +39,20 @@ html[data-theme='dark'] {
   --primary: #2e1b2c;
   --secondary: #2b2233;
   --tertiary: #3b3a32;
+  /* Category colors (dark theme) - mapped from btn-primary/secondary/tertiary */
+  --cat-advanced: #df9490;
+  --cat-advanced-2: #a888c8;
+  --cat-intermediate: #a888c8;
+  --cat-intermediate-2: #88c9d2;
+  --cat-learning: #88c9d2;
+  --cat-learning-2: #c878a8;
+  --cat-basic: #9ca3af;
+  --cat-basic-2: #7f8a94;
+  /* badge text colors - white for contrast on colored backgrounds */
+  --cat-advanced-on: #ffffff;
+  --cat-intermediate-on: #ffffff;
+  --cat-learning-on: #ffffff;
+  --cat-basic-on: #ffffff;
   --accent: #88c9d2;
   --neutral: #b8b2ae;
   --neutral-bg: 

@@ -1,6 +1,77 @@
 
-<div class="grid grid-rows-1 gap-24 px-4 sm:px-8 p-bottom">
+<div class="grid grid-rows-1 gap-8 px-4 sm:px-8 p-bottom">
     <app-init></app-init>
+
+    <div class="divider-line py-4"></div>
+
+    <section id="skills-section" class="glass-card p-8 shadow-lg-soft" >
+      <div class="space-y-6">
+        <div>
+          <h1 class="text-4xl font-bold mb-2">Habilidades</h1>
+          <p class="text-base text-opacity-80">Tecnologías y herramientas que utilizo para construir soluciones escalables</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div *ngFor="let skill of skills" class="skill-card p-5 rounded-[28px] bg-white/5" [ngStyle]="{'border-color': getCategoryColor(skill.level), '--skill-border': getCategoryColor(skill.level)}">
+                <div class="flex items-start sm:items-center gap-4 mb-3">
+                  <img [src]="'assets/images/skills/' + skill.asset" alt="{{ skill.name }}" class="w-12 h-12 rounded-md object-contain bg-white/5 p-2 shrink-0" />
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between gap-4">
+                      <h3 class="font-semibold">{{ skill.name }}</h3>
+                      <span class="px-3 py-1 rounded-full text-sm font-medium" [ngStyle]="{'background-color': getCategoryColor(skill.level), 'color': getCategoryTextColor(skill.level)}">{{ getCategory(skill.level) }}</span>
+                    </div>
+                    <p class="text-sm text-opacity-70 mt-2">{{ skill.desc }}</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <div class="flex-1">
+                      <div class="h-3 rounded-full bg-white/10 overflow-hidden">
+                        <div class="h-full rounded-full transition-all duration-500" [style.width.%]="skill.level" [style.background]="getBarGradient(skill.level)">
+                        </div>
+                      </div>
+                  </div>
+                  <div class="w-12 text-right text-sm font-semibold">{{ skill.level }}%</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Legend / category cards -->
+            <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div class="p-3 rounded-lg border border-white/10 bg-white/5 flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full" style="background:var(--cat-advanced)"></span>
+                <div>
+                  <div class="text-sm font-semibold">Avanzado</div>
+                  <div class="text-xs text-opacity-70">Dominio sólido</div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg border border-white/10 bg-white/5 flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full" style="background:var(--cat-intermediate)"></span>
+                <div>
+                  <div class="text-sm font-semibold">Intermedio</div>
+                  <div class="text-xs text-opacity-70">Buen manejo</div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg border border-white/10 bg-white/5 flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full" style="background:var(--cat-learning)"></span>
+                <div>
+                  <div class="text-sm font-semibold">En aprendizaje</div>
+                  <div class="text-xs text-opacity-70">Aprendiendo activamente</div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg border border-white/10 bg-white/5 flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full" style="background:var(--cat-basic)"></span>
+                <div>
+                  <div class="text-sm font-semibold">Básico</div>
+                  <div class="text-xs text-opacity-70">Conocimientos básicos</div>
+                </div>
+              </div>
+            </div>
+      </div>
+    </section>
 
     <div class="divider-line py-4"></div>
 

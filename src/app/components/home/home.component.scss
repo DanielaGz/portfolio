@@ -1,3 +1,66 @@
 .p-bottom{
     padding-bottom: 70px;
 }
+
+/* Skills section styling to match reference */
+#skills-section {
+    .grid {
+        /* ensure consistent gap and alignment */
+        gap: 1rem;
+    }
+
+    .glass-card & {
+        /* fallback for nested usage */
+    }
+
+    .skill-card {
+        padding: 1.25rem;
+        border-radius: 1.75rem;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        border: 1px solid transparent;
+        box-shadow: 0 0 6px rgba(255,255,255,0.012), 0 0 8px var(--skill-border, rgba(255,255,255,0.048));
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .skill-card:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 0 8px rgba(255,255,255,0.018), 0 0 8px var(--skill-border, rgba(255,255,255,0.06));
+    }
+
+    img.skill-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        background: rgba(255,255,255,0.03);
+        padding: 8px;
+        object-fit: contain;
+        box-shadow: 0 6px 18px rgba(20,14,30,0.45);
+    }
+
+    .skill-title { font-size: 1.125rem; font-weight: 600; }
+
+    .skill-desc { color: rgba(255,255,255,0.75); margin-top: .5rem; font-size: .95rem }
+
+    .category-badge {
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(10,8,15,0.45);
+    }
+
+    .progress-wrap { display:flex; align-items:center; gap: .75rem; margin-top: .8rem }
+    .progress-bar { height: 12px; border-radius: 999px; overflow:hidden; background: rgba(255,255,255,0.04); }
+    .progress-fill { height:100%; border-radius:999px; }
+
+    /* Legend small cards */
+    .legend-card {
+        padding: .6rem .75rem;
+        border-radius: .75rem;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        border: 1px solid rgba(255,255,255,0.04);
+    }
+}
+
+/* Utility classes used in template */
+.btn-primary { background: linear-gradient(90deg, var(--primary), var(--secondary)); }
+.btn-transparent { background: transparent; }

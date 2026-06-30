@@ -12,5 +12,10 @@ export const routes: Routes = [
     loadChildren: () =>
       import('../app/components/features/features.module').then((m) => m.FeaturesModule),
   },
+  {
+    path: 'budget-dashboard',
+    loadChildren: () =>
+      import('../app/components/features/budget-dashboard/budget-dashboard.module').then((m) => m.BudgetDashboardModule),
+  },
   { path: '**', redirectTo: '' }
 ];

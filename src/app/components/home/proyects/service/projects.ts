@@ -2,7 +2,7 @@ export let projects = [
   {
     "id": 1,
     "name": "URL Shortener",
-    "description": "Servicio de generación de URLs cortas temporales.",
+    "description": "Sistema de acortamiento de URLs temporales desarrollado con Angular, FastAPI y MongoDB. Incluye expiración automática, generación seguray arquitectura desacoplada.",
     "technologies": ["FastAPI", "MongoDB", "Angular"],
     "githubUrl": "https://github.com/DanielaGz/url_shortener",
     "demoUrl": "features/url_shortener",
