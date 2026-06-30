@@ -1,0 +1,27 @@
+<div class="auth-mode-container">
+  <div class="auth-mode-card">
+    <h1>Welcome to Budget Dashboard</h1>
+    <p class="subtitle">Choose how you'd like to get started</p>
+
+    <div class="mode-options">
+      <div class="mode-option" (click)="selectDemoMode()">
+        <mat-icon class="mode-icon">preview</mat-icon>
+        <h2>Try Demo Mode</h2>
+        <p>Explore the dashboard with sample data stored locally in your browser. No account required.</p>
+        <button mat-raised-button color="primary">Start Demo</button>
+      </div>
+
+      <div class="mode-option" (click)="selectLoginMode()">
+        <mat-icon class="mode-icon">login</mat-icon>
+        <h2>Login</h2>
+        <p>Access your account and sync your budget data across devices.</p>
+        <button mat-raised-button color="accent">Sign In</button>
+      </div>
+    </div>
+
+    <div class="info-note">
+      <mat-icon>info</mat-icon>
+      <p>Demo mode data is stored only in your browser and won't be synced.</p>
+    </div>
+  </div>
+</div>

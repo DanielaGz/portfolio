@@ -1,0 +1,58 @@
+<header class="dashboard-header">
+  <div class="header-content">
+    <!-- Left: Title and Mode Indicator -->
+    <div class="header-left">
+      <h1>Budget Dashboard</h1>
+      <div class="mode-indicator" *ngIf="isDemoMode">
+        <mat-icon>preview</mat-icon>
+        <span>Demo Mode</span>
+      </div>
+      <div class="user-info" *ngIf="!isDemoMode && currentUser">
+        <mat-icon>person</mat-icon>
+        <span>{{ currentUser.name }}</span>
+      </div>
+    </div>
+
+    <!-- Center: Date Range Controls -->
+    <div class="header-center" *ngIf="currentRange$ | async as range">
+      <button mat-icon-button (click)="navigatePrevious()">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+
+      <div class="range-info">
+        <mat-form-field appearance="outline" class="range-selector">
+          <mat-select [value]="range.rangeType" (selectionChange)="onRangeTypeChange($event.value)">
+            <mat-option *ngFor="let type of rangeTypes" [value]="type.value">
+              {{ type.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="date-picker">
+          <input matInput [matDatepicker]="picker" 
+                 [value]="range.referenceDate"
+                 (dateChange)="onDateChange($event.value)"
+                 readonly>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <div class="range-display">
+          {{ formatDateRange(range) }}
+        </div>
+      </div>
+
+      <button mat-icon-button (click)="navigateNext()">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+
+    <!-- Right: Logout Button -->
+    <div class="header-right">
+      <button mat-stroked-button (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </div>
+  </div>
+</header>
